@@ -1,15 +1,22 @@
-def remove_duplicates(sentence: str) -> str:
-    """
-    Remove duplicates from sentence
-    >>> remove_duplicates("Python is great and Java is also great")
-    'Java Python also and great is'
-    >>> remove_duplicates("Python   is      great and Java is also great")
-    'Java Python also and great is'
-    """
-    return " ".join(sorted(set(sentence.split())))
-
-
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+  def remov_duplicates(input): 
+  
+    # split input string separated by space 
+    input = input.split(" ") 
+  
+    # joins two adjacent elements in iterable way 
+    for i in range(0, len(input)): 
+        input[i] = "".join(input[i]) 
+  
+    # now create dictionary using counter method 
+    # which will have strings as key and their  
+    # frequencies as value 
+    UniqW = Counter(input) 
+  
+    # joins two adjacent elements in iterable way 
+    s = " ".join(UniqW.keys()) 
+    print (s) 
+  
+# Driver program 
+if __name__ == "__main__": 
+    input = 'Python is great and Java is also great'
+    remov_duplicates(input) 
